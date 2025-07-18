@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Padmashri Kamaraj – Web Developer</title>
+  <style>
+    /* Basic Reset and Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    nav {
+      background: #007bff;
+      padding: 10px 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0; padding: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    header#home {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: white;
+    }
+    header#home img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #007bff;
+    }
+    header#home h1 {
+      margin: 0 0 10px;
+    }
+    header#home p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 8px;
+      color: #007bff;
+    }
+
+    ul.skills-list {
+      list-style-type: square;
+      padding-left: 20px;
+      color: #333;
+    }
+    ul.skills-list li {
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #f9f9f9;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project-card h3 {
+      margin-top: 0;
+      color: #007bff;
+    }
+    .project-card a {
+      margin-top: 10px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    form label {
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 8px 10px;
+      margin: 6px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: inherit;
+    }
+    form button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #0056b3;
+    }
+
+    section#contact p {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    section#contact a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    section#contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: #007bff;
+      color: white;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home / Hero -->
+  <header id="home">
+    <img src="profile.jpg" alt="My profile photo" />
+    <h1>Hi, I'm Padmashri Kamaraj</h1>
+    <p>Web Developer – I build responsive and interactive web apps.</p>
+  </header>
+
+  <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a web developer with a passion for bringing ideas to life online.
+      Graduated from SIES Nerul University.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>HTML5 &amp; CSS3</li>
+      <li>JavaScript (ES6+), React</li>
+      <li>Node.js, Express</li>
+      <li>Git, Webpack, Figma</li>
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Project Title</h3>
+        <p>Short description of what it does and technologies used.</p>
+        <a href="https://github.com/yourname/project" target="_blank" rel="noopener noreferrer">View Code</a>
+        <a href="https://project-demo.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+      </div>
+      <!-- Add more project cards as needed -->
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formsubmit.co/padmashrinadar@gmail.com" method="POST">
+      <label for="name">Name:</label><br />
+      <input id="name" type="text" name="name" required /><br />
+
+      <label for="email">Email:</label><br />
+      <input id="email" type="email" name="email" required /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="5" required></textarea><br />
+
+      <button type="submit">Send</button>
+    </form>
+
+    <p>
+      Or reach out on
+      <a href="https://github.com/padmashri24" target="_blank" rel="noopener noreferrer">GitHub</a>,
+      <a href="https://linkedin.com/in/padmashrinadar" target="_blank" rel="noopener noreferrer">LinkedIn</a>,
+      <a href="https://twitter.com/yourname" target="_blank" rel="noopener noreferrer">Twitter</a>.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Padmashri. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
