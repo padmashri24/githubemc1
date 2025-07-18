@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stopwatch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    #display {
+      font-size: 48px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    .buttons button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 0 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .buttons button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Stopwatch</h1>
+    <div id="display">00:00:00</div>
+    <div class="buttons">
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+      <button id="reset">Reset</button>
+    </div>
+  </div>
+
+  <script>
+    let startTime;
+    let elapsedTime = 0;
+    let timerInterval;
+
+    function timeToString(time) {
+      let date = new Date(time);
+      let minutes = date.getUTCMinutes().toString().padStart(2, "0");
+      let seconds = date.getUTCSeconds().toString().padStart(2, "0");
+      let milliseconds = Math.floor(date.getUTCMilliseconds() / 10).toString().padStart(2, "0");
+      return `${minutes}:${seconds}:${milliseconds}`;
+    }
+
+    function startTimer() {
+      startTime = Date.now() - elapsedTime;
+      timerInterval = setInterval(function () {
+        elapsedTime = Date.now() - startTime;
+        document.getElementById("display").textContent = timeToString(elapsedTime);
+      }, 10);
+    }
+
+    function stopTimer() {
+      clearInterval(timerInterval);
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      elapsedTime = 0;
+      document.getElementById("display").textContent = "00:00:00";
+    }
+
+    document.getElementById("start").addEventListener("click", startTimer);
+    document.getElementById("stop").addEventListener("click", stopTimer);
+    document.getElementById("reset").addEventListener("click", resetTimer);
+  </script>
+</body>
+</html>
